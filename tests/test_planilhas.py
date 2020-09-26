@@ -12,6 +12,10 @@ class TestPadronizarNomeCompleto(TestCase):
         resultado = padronizar_nome_completo(" ANA ")
         self.assertEqual("ANA", resultado)
 
-    # def test_padronizar_nome_completo_retorna_nome_sem_espacos_extras_entre_os_nomes(self):
-    #     resultado = padronizar_nome_completo("ANA  PAULA")
-    #     self.assertEqual("ANA PAULA", resultado)
+    def test_padronizar_nome_completo_retorna_nome_sem_espacos_extras_entre_os_nomes(self):
+        resultado = padronizar_nome_completo("ANA  PAULA")
+        self.assertEqual("ANA PAULA", resultado)
+
+    def test_padronizar_nome_completo_retorna_nome_sem_espacos_extras_entre_os_nomes_quando_ha_3_espacos(self):
+        resultado = padronizar_nome_completo("ANA   PAULA")
+        self.assertEqual("ANA PAULA", resultado)
